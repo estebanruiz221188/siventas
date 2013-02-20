@@ -10,20 +10,20 @@ RewriteCond %{HTTP_HOST} ^www.(.*) [NC]
 RewriteRule ^(.*) http://%1/$1 [R=301,L]
 
 ##
-#RewriteRule ^uploadify/.*$ - [PT]
-#RewriteRule ^uploads/.*$ - [PT]
+RewriteRule ^uploadify/.*$ - [PT]
+RewriteRule ^uploads/.*$ - [PT]
 
-#<IfModule mod_headers.c>
-#  <FilesMatch "\.(js|css|xml|gz)$">
-#    Header append Vary: Accept-Encoding
-#  </FilesMatch>
-#</IfModule>
+<IfModule mod_headers.c>
+  <FilesMatch "\.(js|css|xml|gz)$">
+    Header append Vary: Accept-Encoding
+  </FilesMatch>
+</IfModule>
 
 #ExpiresActive On
-#<FilesMatch "\.(js|css|ico|pdf|flv|jpg|jpeg|png|gif|swf|mp3|mp4)$">
+<FilesMatch "\.(js|css|ico|pdf|flv|jpg|jpeg|png|gif|swf|mp3|mp4)$">
 #	ExpiresDefault "access plus 1 weeks"
-#	Header append Cache-Control "public"
-#</FilesMatch>
+	Header append Cache-Control "public"
+</FilesMatch>
 
 #AddOutputFilterByType DEFLATE text/plain
 #AddOutputFilterByType DEFLATE text/html
