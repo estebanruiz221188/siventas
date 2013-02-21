@@ -21,7 +21,7 @@ class Login_model extends CI_Model {
             {
                 foreach ($query->result() as $row)
                 {
-                    if($row->admin_status > 0)
+                    if($row->login_adm_status > 0)
                     {
                         $this->session->set_userdata(array("ses_admin_activa"=>true,"ses_admin_id"=>$row->login_adm_id,"ses_admin_nombre"=>$row->login_adm_nombre));
                         $data["login"]=true;
