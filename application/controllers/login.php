@@ -11,28 +11,8 @@ class Login extends CI_Controller {
 
 	function login_admin()
 	{
-		$this->load->library('session');
-		$data["login"]=false;
-		if(strlen($_POST["usuario"])>4 && strlen($_POST["password"])>4)
-		{
-			$this->load->database();
-			$consulta="SELECT * FROM `sv_login_administrador` WHERE `login_adm_usuario` = '".$_POST["usuario"]."' COLLATE utf8_bin AND `login_adm_password` = '".sha1($_POST["password"])."'";
-			$data["q"]=$consulta;
-			$query=$this->db->query($consulta);
-			if ($query->num_rows > 0)
-			{
-				foreach ($query->result() as $row)
-				{
-					if($row->estatus==1)
-					{
-						$this->session->set_userdata(array("ses_admin_activa"=>true,"ses_admin_id"=>$row->id_usuario,"ses_admin_nombre"=>$row->nombre_real_usuario));
-						$data["login"]=true;
-					}
-				}
-
-			}
-		}
-		echo json_encode($data);
+		$this->load->model('login_model');
+		$this->login_model->login_adm($_POST["usuario"],$_POST["pass"]);
 	}
 
 	function unlog()

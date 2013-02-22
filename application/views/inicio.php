@@ -14,7 +14,7 @@
         <div class="span1"></div>
         <div class="span3 centro">
             
-            <form class="img-rounded img-polaroid centro">
+            <form class="img-rounded img-polaroid centro" id="login" action="javascript:adm_login();">
               Entrar a mi cuenta.<br>
               <br>
               Usuario:<br>

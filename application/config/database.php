@@ -41,20 +41,20 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-/*if($_SERVER['HTTP_HOST']=='localhost')
-{*/
+if($_SERVER['HTTP_HOST']=='localhost')
+{
 $db['default']['hostname'] = 'localhost';
 $db['default']['username'] = 'root';
 $db['default']['password'] = '';
-$db['default']['database'] = 'siventa';
-/*}
+$db['default']['database'] = 'siventas';
+}
 else
 {
 $db['default']['hostname'] = 'localhost';
 $db['default']['username'] = 'user';
 $db['default']['password'] = 'pass';
 $db['default']['database'] = 'database';
-}*/
+}
 
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
