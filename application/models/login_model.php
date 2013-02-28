@@ -14,7 +14,7 @@ class Login_model extends CI_Model {
         if(strlen($usuario)>4 && strlen($password)>4)
         {
             $this->load->database();
-            $consulta="SELECT 'login_adm_usuario, login_adm_nombre, login_adm_password,  login_adm_status, login_adm_tipo' FROM 'sv_login_administrador' INNER JOIN 'sv_login_adm_tipo' ON `login_adm_usuario` = '".$usuario."' COLLATE utf8_bin AND `login_adm_password` = '".sha1($password)."' and sv_login_administrador.login_adm_tipo_id= sv_login_adm_tipo.login_adm_tipo_id";
+            $consulta="SELECT 'login_adm_usuario, login_adm_nombre, login_adm_password,  login_adm_status, login_adm_tipo' FROM 'sv_login_administrador' INNER JOIN 'sv_login_adm_tipo' ON 'sv_login_administrador.login_adm_tipo_id= sv_login_adm_tipo.login_adm_tipo_id' where `login_adm_usuario` = '".$usuario."' COLLATE utf8_bin AND `login_adm_password` = '".sha1($password)."';
             //$data["q"]=$consulta;
             $query=$this->db->query($consulta);
             if ($query->num_rows > 0)
