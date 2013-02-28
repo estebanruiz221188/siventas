@@ -12,7 +12,7 @@ class Login extends CI_Controller {
 	function login_admin()
 	{
 		$this->load->model('login_model');
-		$this->login_model->login_adm($_POST["usuario"],$_POST["pass"]);
+		$this->login_model->login_adm($_POST["usuario"],$_POST["password"]);
 	}
 
 	function unlog()

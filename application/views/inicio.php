@@ -20,7 +20,7 @@
               Usuario:<br>
               <input type="text" name="usuario"><br>
               Contraseña<br>
-              <input type="password" name="pass"><br>
+              <input type="password" name="password"><br>
               <input class="btn btn-primary btn-targe" type="submit" value="Entrar">
             </form>
         </div>
